@@ -4,6 +4,7 @@ var regions = kmtBoot.getProps().packages.models.map((p) => {
 	console.log("Region ID: %d ", p.attributes.region.id);
 	return p.attributes.region.id
 });
+regions.push(4032)
 
 function loadScripts(srcs, callback={}){
 	if(srcs.length == 0){
