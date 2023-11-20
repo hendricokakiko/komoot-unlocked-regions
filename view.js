@@ -4,7 +4,20 @@ var regions = kmtBoot.getProps().packages.models.map((p) => {
 	console.log("Region ID: %d ", p.attributes.region.id);
 	return p.attributes.region.id
 });
-regions.push(4032)
+for (var i = 3850; i <= 3851; i++) {
+   regions.push(i);
+}
+// regions.push(4032,2105,2106,2107,2047,2048,2049,2050,2051,2052,2053,2054,2055);  
+//1000-2000 eizelregionen DE
+//2000 - 4000 Deutschland Österreich u Schweiz
+//4001 - 4047 GB und IR
+//3000-3500 CZ ES DK FR - mit einzelregion
+// 3000-3013 fast ganz CZ
+// 3080-3085 DK
+// 3122-3171 ES
+// 3378-3446 FR
+// 3788 - 3800 süd IT
+//3853 - 3876 PL
 
 function loadScripts(srcs, callback={}){
 	if(srcs.length == 0){
@@ -108,7 +121,7 @@ loadScripts(["https://unpkg.com/maplibre-gl/dist/maplibre-gl.js"], () => {
 								},
 								properties: {
 									region: json.regions[0].groupId==1,
-									name: json.regions[0].name,
+									name:  id//json.regions[0].name,
 								},
 							}]
 						});
