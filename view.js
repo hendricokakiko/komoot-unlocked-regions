@@ -1,6 +1,7 @@
 // get list of unlocked regions from komoot internal API
 var regions = kmtBoot.getProps().packages.models.map((p) => {
 	if (p.attributes.region === undefined) {return 9999;}
+	console.log("Region ID: %d ", p.attributes.region.id);
 	return p.attributes.region.id
 });
 
