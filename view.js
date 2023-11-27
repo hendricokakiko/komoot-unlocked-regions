@@ -1,15 +1,39 @@
 // get list of unlocked regions from komoot internal API
-var regions = kmtBoot.getProps().packages.models.map((p) => {
+var regions =kmtBoot.getProps().packages.models.map((p) => {
 	if (p.attributes.region === undefined) {return 9999;}
 	console.log("Region ID: %d ", p.attributes.region.id);
 	return p.attributes.region.id
 });
-for (var i = 3850; i <= 3851; i++) {
-   regions.push(i);
-}
+for (var i = 0; i <= 30; i++) {
+   delete regions[i];}
+
+/*for (var i = 2000; i <= 2117; i++) {
+   regions.push(i);} // DE, AT, CH
+for (var i = 2502; i <= 2542; i++) {
+   regions.push(i);} // BE,NE,LU
+for (var i = 4001; i <= 4047; i++) {
+   regions.push(i);} // GB,IR
+for (var i = 3000; i <= 3013; i++) {
+   regions.push(i);} // CZ*
+for (var i = 3080; i <= 3085; i++) {
+   regions.push(i);} // DK
+for (var i = 3122; i <= 3171; i++) {
+   regions.push(i);} // ES
+for (var i = 3378; i <= 3446; i++) {
+   regions.push(i);} // FR
+for (var i = 3788; i <= 3800; i++) {
+   regions.push(i);} // süd IT
+for (var i = 3853; i <= 3876; i++) {
+   regions.push(i);} // PL*/
+for (var i = 3988; i <= 3989; i++) {
+   regions.push(i);} // SL
+for (var i = 4258; i <= 4276; i++) {
+   regions.push(i);} // PT
+
 // regions.push(4032,2105,2106,2107,2047,2048,2049,2050,2051,2052,2053,2054,2055);  
 //1000-2000 eizelregionen DE
-//2000 - 4000 Deutschland Österreich u Schweiz
+//2000 - 2117 Deutschland Österreich u Schweiz
+// 2502-2542 BE NE LUX, Norditalien, Balaren, Kanaren
 //4001 - 4047 GB und IR
 //3000-3500 CZ ES DK FR - mit einzelregion
 // 3000-3013 fast ganz CZ
@@ -18,6 +42,8 @@ for (var i = 3850; i <= 3851; i++) {
 // 3378-3446 FR
 // 3788 - 3800 süd IT
 //3853 - 3876 PL
+// 3988,3989 SL
+// 4258 - 4276 PT
 
 function loadScripts(srcs, callback={}){
 	if(srcs.length == 0){
